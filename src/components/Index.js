@@ -1,7 +1,10 @@
 import React from 'react';
 import { NavLink, Route, Routes } from 'react-router-dom';
 import Signin from './Signin';  
-import Signup from './Signup';  
+import Signup from './Signup';
+import HouseOwnerSignup   from './HouseOwnerSignup';
+import HouseOwnerSignin   from './HouseOwnerSignin';
+
 import './CSS/Index.css';
 
 export default function Index() {
@@ -16,6 +19,10 @@ export default function Index() {
           <ul>
             <li><NavLink to="/signin" activeClassName="active">SIGN IN</NavLink></li>
             <li><NavLink to="/signup" activeClassName="active">SIGN UP</NavLink></li>
+            <li><NavLink to="/houseOwnerSignup" activeClassName="active">House Owner SIGN UP</NavLink></li>
+            <li><NavLink to="/houseOwnerSignin" activeClassName="active">House Owner SIGN IN</NavLink></li>
+
+
           </ul>
         </div>
       </div>
@@ -24,6 +31,11 @@ export default function Index() {
         <Routes>
           <Route path="/signin" element={<Signin />} />
           <Route path="/signup" element={<Signup />} />
+          <Route path="/houseOwnerSignup" element={<HouseOwnerSignup />} />
+          <Route path="/houseOwnerSignin" element={<HouseOwnerSignin />} />
+
+
+
           <Route
             path="/"
             element={
