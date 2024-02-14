@@ -1,0 +1,39 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.login-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.form {
+  width: 600px;
+  height: 500px;
+  background: linear-gradient(to top, rgb(69, 23, 45) 50%, rgb(69, 22, 44) 50%);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  border-radius: 20px;
+  padding: 25px;
+  padding-left: 55px;
+
+}
+
+
+
+.login-header {
+  text-align: center;
+}
+
+.message {
+  text-align: center;
+}
+
+
