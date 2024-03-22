@@ -39,7 +39,7 @@ export default function AdminSignup() {
       formDataToSend.append('password', formData.password);
       formDataToSend.append('photo', formData.photo);
 
-      const response = await fetch('http://192.168.0.113:8080/AdminSignup', {
+      const response = await fetch(`${API_BASE_URL}/AdminSignup`, {
         method: 'POST',
         body: formDataToSend
       });
@@ -52,8 +52,6 @@ export default function AdminSignup() {
       navigate('/adminList', { state: { data: state.data } });
     } catch (error) {
       console.error('Error:', error);
-      // Handle error gracefully, show error message to the user
-      // Example: set an error state to display a message on the UI
     }
   };
 
