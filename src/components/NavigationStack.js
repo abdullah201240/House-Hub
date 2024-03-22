@@ -15,6 +15,7 @@ import AdminProfile from './AdminProfile';
 import AdminUserList from './AdminUserList';
 
 import AdminSignup from './AdminSignup';
+import HouseJoin from './HouseJoin';
 function NavigationStack() {
 
   return (
@@ -46,6 +47,9 @@ function NavigationStack() {
         
 
         <Route path="/adminUserList" element={<AdminUserList />} />
+        <Route path="/houseJoin" element={<HouseJoin />} />
+
+        
 
         <Route path="/*" element={<Navigate to="/index" />} />
       </Routes>

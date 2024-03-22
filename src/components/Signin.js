@@ -3,6 +3,7 @@ import { NavLink} from 'react-router-dom';
 import axios from 'axios';
 import "./CSS/Signin.css";
 import { API_BASE_URL } from './config'; 
+import { useNavigate } from 'react-router-dom';
 
 const CustomAlert = ({ message, onClose }) => (
   <div className="custom-alert">
@@ -16,6 +17,8 @@ const Signin = () => {
   const [password, setPassword] = useState('');
   const [showAlert, setShowAlert] = useState(false);
   const [alertMessage, setAlertMessage] = useState('');
+  const navigate = useNavigate();
+
 
   const handleLoginFormSubmit = async (e) => {
     e.preventDefault();
@@ -26,9 +29,13 @@ const Signin = () => {
         email,
         password,
       });
+      const { data } = response;
 
+
+      
       console.log('Login successful:', response.data);
-      window.open('/dashboard', response.data);
+      navigate('/dashboard', { state: { data: data } });
+
 
 
 
