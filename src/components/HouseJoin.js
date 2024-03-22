@@ -6,6 +6,15 @@ import { API_BASE_URL } from './config';
 import './CSS/houseownernavbar.css';
 
 export default function HouseJoin() {
+const [showAlert, setShowAlert] = useState(false);
+const [alertMessage, setAlertMessage] = useState('');
+const CustomAlert = ({ message, onClose }) => (
+        <div className="custom-alert">
+          <p>{message}</p>
+          <button onClick={onClose}>Close</button>
+        </div>
+      );
+      
   const location = useLocation();
   const navigate = useNavigate();
   const [searchQuery, setSearchQuery] = useState('');
@@ -33,7 +42,23 @@ export default function HouseJoin() {
       setSearchResults([]);
     }
   };
-  
+  const handleJoin = async (houseOwner) => {
+    try {
+      const response = await axios.post(`${API_BASE_URL}/Join`, {
+        houseOwner,
+        userInfo: location.state.data.data 
+      });
+      console.log('Join request successful:', response.data);
+    } catch (error) {
+      console.error('Error joining house:', error);
+      setAlertMessage('Already has a house, not allowed to join');
+      setShowAlert(true);
+    }
+    
+  };
+  const closeAlert = () => {
+    setShowAlert(false);
+  };
   
 
   return (
@@ -124,7 +149,7 @@ export default function HouseJoin() {
                ><img src={`${API_BASE_URL}/${result.addressproof}`} alt="Address Proof" width="60" height="60" className="rounded-circle" /></a> 
                </td>
                <td>
-               <button type="button" class="btn btn-success" style={{borderRadius:20}}>Join</button>
+               <button type="button" class="btn btn-success" style={{borderRadius:20}} onClick={() => handleJoin(result)}>Join</button>
 
                </td>
 
@@ -133,6 +158,9 @@ export default function HouseJoin() {
           ))}
         </tbody>
       </table>
+      {showAlert && (
+        <CustomAlert message={alertMessage} onClose={closeAlert} />
+      )}
     </div>
   );
 }
