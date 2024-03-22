@@ -5,6 +5,7 @@ import './CSS/houseownernavbar.css'
 export default function Dashboard() {
   const location = useLocation();
   const navigate = useNavigate();
+  
 
     
   const houseJoin = async () => {

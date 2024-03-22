@@ -1,7 +1,26 @@
-import React from 'react' 
+import React, { useEffect } from 'react';
+import { useLocation,useNavigate } from 'react-router-dom';
 
 import './CSS/houseownernavbar.css'
 export default function HouseOwnerDashboard() {
+  const location = useLocation();
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (!location.state || !location.state.data) {
+      navigate('/houseOwnerSignin');
+    }
+    else{
+
+       console.log(location.state.data.data)
+
+    }
+  }, [location.state, navigate])
+  const houseOwnerRequest = async () => {
+    navigate('/houseOwnerRequest', { state: { data: location.state.data } });
+  };
+  const houseOwnerDashboard = async () => {
+    navigate('/houseOwnerDashboard', { state: { data: location.state.data } });
+  };
   return (
     <div>
 
@@ -14,10 +33,13 @@ export default function HouseOwnerDashboard() {
   <div class="collapse navbar-collapse" id="navbarSupportedContent" style={{paddingLeft:300}}>
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="/"><h3>Home</h3> <span class="sr-only">(current)</span></a>
+      <a class="nav-link" href="/houseOwnerDashboard" onClick={houseOwnerDashboard}>
+          <h3>Home</h3> <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/">Link</a>
+        <a class="nav-link" href="/houseOwnerRequest" onClick={houseOwnerRequest}>
+          
+          <h3>Request</h3></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="/">Link</a>
@@ -42,7 +64,7 @@ export default function HouseOwnerDashboard() {
   </div>
 </nav>
 <br/>
-<h1 style={{textAlign:"center"}}>All members residing within the house</h1>
+<h1 style={{textAlign:"center" }}> <l>All members residing within the house</l></h1>
 
 <br/>
 

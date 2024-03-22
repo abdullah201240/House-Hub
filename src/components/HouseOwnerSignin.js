@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom'
 import axios from 'axios';
 import "./CSS/Signin.css";
 import { API_BASE_URL } from './config'; 
+import { useNavigate } from 'react-router-dom';
 
 
 const CustomAlert = ({ message, onClose }) => (
@@ -13,6 +14,8 @@ const CustomAlert = ({ message, onClose }) => (
 );
 
 const HouseOwnerSignin = () => {
+  const navigate = useNavigate();
+
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -26,10 +29,11 @@ const HouseOwnerSignin = () => {
         email,
         password,
       });
+      const { data } = response;
 
-      console.log('Login successful:', response.data);
 
-      window.open('/houseOwnerDashboard', '_blank');
+      navigate('/houseOwnerDashboard', { state: { data: data } });
+
 
     } catch (error) {
       console.error('Error logging in:', error.response.data);

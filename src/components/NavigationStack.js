@@ -17,6 +17,7 @@ import AdminUserList from './AdminUserList';
 import AdminSignup from './AdminSignup';
 import HouseJoin from './HouseJoin';
 import HouseInfo from './HouseInfo';
+import HouseOwnerRequest from './HouseOwnerRequest';
 function NavigationStack() {
 
   return (
@@ -50,6 +51,8 @@ function NavigationStack() {
         <Route path="/adminUserList" element={<AdminUserList />} />
         <Route path="/houseJoin" element={<HouseJoin />} />
         <Route path="/houseInfo" element={<HouseInfo />} />
+        
+        <Route path="/houseOwnerRequest" element={<HouseOwnerRequest />} />
 
 
         
