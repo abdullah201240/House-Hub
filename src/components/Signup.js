@@ -40,9 +40,13 @@ export default function Signup() {
         </div>
 
         <div className="menu">
-          <ul>
+        <ul>
             <li><NavLink to="/signin" activeClassName="active">SIGN IN</NavLink></li>
             <li><NavLink to="/signup" activeClassName="active">SIGN UP</NavLink></li>
+            <li><NavLink to="/houseOwnerSignup" activeClassName="active">House Owner SIGN UP</NavLink></li>
+            <li><NavLink to="/houseOwnerSignin" activeClassName="active">House Owner SIGN IN</NavLink></li>
+
+
           </ul>
         </div>
       </div>
@@ -50,26 +54,23 @@ export default function Signup() {
       <div className="form">
         <div className="login">
           <div className="login-header">
+            <br></br>
             <h3>Sign Up</h3>
             <p>Please enter your credentials to Sign Up.</p>
           </div>
         </div>
-        <form className="login-form" onSubmit={handleSignup}>
-          <input type="text" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} />
-          <input type="text" placeholder="Phone Number" value={phone} onChange={(e) => setPhone(e.target.value)} />
-          <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
-          <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
+        <form className="login-form" onSubmit={handleSignup} >
+          <input type="text" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)}   className="custom-input" style={{ color: 'blue' }} /> <br /> 
+          <input type="text" placeholder="Phone Number" value={phone} onChange={(e) => setPhone(e.target.value)} className="custom-input" style={{ color: 'blue' }} /> <br /> 
+          <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} className="custom-input" style={{ color: 'blue' }} /><br /> 
+          <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} className="custom-input" style={{ color: 'blue' }} /><br /> 
+          <br/> 
+          <button type="submit" className="btn">Sign Up</button>
           <br/> <br/>
-          <button className='btn1' type="submit">Sign Up</button>
-          <br/> <br/>
-          <h6 className="message">
-            Have an account?
-            <br/> <br/>
-            <NavLink to="/signin" activeClassName="active" className='btn'>Sign In</NavLink>
-          </h6>
+          
         </form>
+        </div>
       </div>
-    </div>
     </div>
   );
 }

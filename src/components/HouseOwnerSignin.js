@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom'
 import axios from 'axios';
 import "./CSS/Signin.css";
 import { API_BASE_URL } from './config'; 
@@ -13,6 +13,7 @@ const CustomAlert = ({ message, onClose }) => (
 );
 
 const HouseOwnerSignin = () => {
+
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [showAlert, setShowAlert] = useState(false);
@@ -49,9 +50,13 @@ const HouseOwnerSignin = () => {
         </div>
 
         <div className="menu">
-          <ul>
-            <li><NavLink to="/houseOwnerSignin" activeClassName="active">House Owner Signin</NavLink></li>
-            <li><NavLink to="/houseOwnerSignup" activeClassName="active">House Owner Signup</NavLink></li>
+        <ul>
+            <li><NavLink to="/signin" activeClassName="active">SIGN IN</NavLink></li>
+            <li><NavLink to="/signup" activeClassName="active">SIGN UP</NavLink></li>
+            <li><NavLink to="/houseOwnerSignup" activeClassName="active">House Owner SIGN UP</NavLink></li>
+            <li><NavLink to="/houseOwnerSignin" activeClassName="active">House Owner SIGN IN</NavLink></li>
+
+
           </ul>
         </div>
       </div>
@@ -59,8 +64,10 @@ const HouseOwnerSignin = () => {
     <div className="login-page">
       <div className="form">
         <div className="login-header">
-          <h3>House Owner LOGIN</h3>
-          <p>Please enter your credentials to login.</p>
+        <br/>
+          <br/>
+          <h3>House Owner Login</h3>
+          <p style={{textAlign:"center"}}>Please enter your credentials to login.</p>
         </div>
         <form onSubmit={handleLoginFormSubmit}>
           <input
@@ -68,6 +75,8 @@ const HouseOwnerSignin = () => {
             placeholder="Email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
+            style={{ color: 'blue' }}
+            className="custom-input"
           />
           <br/>
 
@@ -76,6 +85,8 @@ const HouseOwnerSignin = () => {
             placeholder="Password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
+            style={{ color: 'blue' }}
+            className="custom-input"
           />
           <br/>
           <br/>
@@ -83,17 +94,10 @@ const HouseOwnerSignin = () => {
 
           <button type="submit" className="btn">Sign In</button>
           <br/>
-
-          <p className="message">
-            Not registered?
-            <br/>
-            <br/>
+          <br/>
 
 
-            <NavLink to="/houseOwnerSignup" activeClassName="active" className='btn'>
-              Sign Up
-            </NavLink>
-          </p>
+         
         </form>
       </div>
 

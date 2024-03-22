@@ -29,7 +29,7 @@ ul li{
 }
 ul li a{
   text-decoration: none;
-  color: #fff;
+  color: #080808;
   font-family: Arial;
   font-weight: bold;
   transition: 0.4s ease-in-out;
@@ -59,7 +59,7 @@ ul li a:hover{
   .form {
     width: 400px;
     height: 400px;
-    background: linear-gradient(to top, rgb(69, 23, 45) 50%, rgb(69, 22, 44) 50%);
+    background: linear-gradient(to top, rgb(174, 174, 174) 50%, rgb(193, 192, 193) 50%);
     position: absolute;
     top: 0;
     left: 0;
@@ -76,11 +76,11 @@ ul li a:hover{
   
   .login-header {
     text-align: center;
-    color: white;
+    color: rgb(0, 0, 0);
   }
   
   .message {
-    color: white;
+    color: rgb(14, 14, 14);
 
     text-align: center;
   }
@@ -93,7 +93,7 @@ ul li a:hover{
   background-color: #fff;
   color: #000; /* Set text color to black */
   padding: 20px;
-  border: 1px solid #ccc;
+  border: 1px solid #000000;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   z-index: 1000;
   text-align: center;
@@ -103,11 +103,17 @@ ul li a:hover{
   margin-top: 10px;
   padding: 8px 16px;
   background-color: #007BFF;
-  color: #fff;
+  color: #000000;
   border: none;
   cursor: pointer;
 }
 
 .custom-alert button:hover {
   background-color: #0056b3;
+}
+.custom-input::placeholder {
+  color: rgb(130, 128, 128); 
+}
+.custom-input{
+  color: blue;
 }

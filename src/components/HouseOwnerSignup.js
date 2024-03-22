@@ -43,9 +43,13 @@ export default function HouseOwnerSignup() {
           <h2 className="logo">House Hub</h2>
         </div>
         <div className="menu">
-          <ul>
-            <li><NavLink to="/houseOwnerSignin" activeClassName="active">SIGN IN</NavLink></li>
-            <li><NavLink to="/houseOwnerSignup" activeClassName="active">SIGN UP</NavLink></li>
+        <ul>
+            <li><NavLink to="/signin" activeClassName="active">SIGN IN</NavLink></li>
+            <li><NavLink to="/signup" activeClassName="active">SIGN UP</NavLink></li>
+            <li><NavLink to="/houseOwnerSignup" activeClassName="active">House Owner SIGN UP</NavLink></li>
+            <li><NavLink to="/houseOwnerSignin" activeClassName="active">House Owner SIGN IN</NavLink></li>
+
+
           </ul>
         </div>
       </div>
@@ -53,26 +57,31 @@ export default function HouseOwnerSignup() {
         <div className="form">
           <div className="login">
             <div className="login-header">
+              <br></br>
               <h3>Sign Up</h3>
               <p>Please enter your credentials to Sign Up.</p>
             </div>
           </div>
           <form className="login-form" onSubmit={handleSignup}>
-            <input type="text" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} />
-            <input type="text" placeholder="Phone Number" value={phone} onChange={(e) => setPhone(e.target.value)} />
-            <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
-            <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
-            <input type="text" placeholder="Address" value={address} onChange={(e) => setAddress(e.target.value)} />
-            <input type="file" accept="image/*" onChange={(e) => setAddressProof(e.target.files[0])} />
-            <br/> <br/>
-            <button className='btn1' type="submit">Sign Up</button>
-            <br/> <br/>
-            <h6 className="message">
-              Have an account?
-              <br/> <br/>
-              <NavLink to="/houseOwnerSignin" activeClassName="active" className='btn'>Sign In</NavLink>
-            </h6>
-          </form>
+    <div className="input-row">
+        <input type="text" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} className="custom-input" style={{ color: 'blue' }} />
+        <input type="text" placeholder="Phone Number" value={phone} onChange={(e) => setPhone(e.target.value)} className="custom-input" style={{ color: 'blue' }} />
+    </div>
+    <div className="input-row">
+
+    <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)}className="custom-input" style={{ color: 'blue' }}/>
+    <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)}className="custom-input" style={{ color: 'blue' }} />
+    </div>
+    <div className="input-row">
+
+    <input type="text" placeholder="Address" value={address} onChange={(e) => setAddress(e.target.value)} className="custom-input" style={{ color: 'blue' }}/>
+    <input type="file" accept="image/*" onChange={(e) => setAddressProof(e.target.files[0])}className="custom-input" style={{ color: 'blue' }} />
+    </div>
+    <br/><br/>
+    <button className='btn' type="submit">Sign Up</button>
+    <br/><br/>
+</form>
+
         </div>
       </div>
     </div>

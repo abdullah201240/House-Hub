@@ -59,9 +59,13 @@ const Signin = () => {
         </div>
 
         <div className="menu">
-          <ul>
+        <ul>
             <li><NavLink to="/signin" activeClassName="active">SIGN IN</NavLink></li>
             <li><NavLink to="/signup" activeClassName="active">SIGN UP</NavLink></li>
+            <li><NavLink to="/houseOwnerSignup" activeClassName="active">House Owner SIGN UP</NavLink></li>
+            <li><NavLink to="/houseOwnerSignin" activeClassName="active">House Owner SIGN IN</NavLink></li>
+
+
           </ul>
         </div>
       </div>
@@ -69,15 +73,22 @@ const Signin = () => {
     <div className="login-page">
       <div className="form">
         <div className="login-header">
+          <br/>
+          <br/>
+
           <h3>LOGIN</h3>
           <p>Please enter your credentials to login.</p>
         </div>
+        < div style={{paddingLeft:50}}>
+
         <form onSubmit={handleLoginFormSubmit}>
           <input
             type="email"
             placeholder="Email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
+            style={{ color: 'blue' }}
+            className="custom-input"
           />
           <br/>
 
@@ -86,25 +97,24 @@ const Signin = () => {
             placeholder="Password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
+            style={{ color: 'blue' }}
+
+            className="custom-input"
           />
           <br/>
           <br/>
           <br/>
 
           <button type="submit" className="btn">Sign In</button>
+          
+          <br/>
           <br/>
 
-          <p className="message">
-            Not registered?
-            <br/>
-            <br/>
 
-
-            <NavLink to="/signup" activeClassName="active" className='btn'>
-              Sign Up
-            </NavLink>
-          </p>
+        
         </form>
+        
+        </div>
       </div>
 
       {showAlert && (

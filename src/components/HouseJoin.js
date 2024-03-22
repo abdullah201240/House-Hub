@@ -59,6 +59,15 @@ const CustomAlert = ({ message, onClose }) => (
   const closeAlert = () => {
     setShowAlert(false);
   };
+  const houseJoin = async () => {
+    navigate('/houseJoin', { state: { data: location.state.data } });
+  };
+  const houseInfo = async () => {
+    navigate('/houseInfo', { state: { data: location.state.data } });
+  };
+  const dashboard = async () => {
+    navigate('/dashboard', { state: { data: location.state.data } });
+  };
   
 
   return (
@@ -82,13 +91,19 @@ const CustomAlert = ({ message, onClose }) => (
         <div className="collapse navbar-collapse" id="navbarSupportedContent" style={{ paddingLeft: 300 }}>
           <ul className="navbar-nav mr-auto">
             <li className="nav-item active">
-              <a className="nav-link" href="/"><h3>Home</h3></a>
+            <a className="nav-link" href="/dashboard" onClick={dashboard}>
+                
+                <h3>Home</h3></a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/"><h3>HouseJoin</h3><span className="sr-only">(current)</span></a>
+            <a className="nav-link" href="/houseJoin" onClick={houseJoin}>
+                
+                <h3>HouseJoin</h3><span className="sr-only">(current)</span></a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/">Link</a>
+            <a className="nav-link" href="/houseInfo" onClick={houseInfo}>
+                
+            <h3>HouseInfo</h3></a>
             </li>
             <li className="nav-item">
               <a className="nav-link" href="/">Link</a>
@@ -125,7 +140,6 @@ const CustomAlert = ({ message, onClose }) => (
             <th scope="col">Name</th>
             <th scope="col">Email</th>
             <th scope="col">Address</th>
-            <th scope="col">Phone</th>
             <th scope="col">Photo</th>
             <th scope="col">Action</th>
 
@@ -143,7 +157,6 @@ const CustomAlert = ({ message, onClose }) => (
               <td>{result.name}</td> 
               <td>{result.email}</td> 
               <td>{result.address}</td> 
-              <td>{result.phone}</td> 
               <td>
                <a href={`${API_BASE_URL}/${result.addressproof}`}
                ><img src={`${API_BASE_URL}/${result.addressproof}`} alt="Address Proof" width="60" height="60" className="rounded-circle" /></a> 

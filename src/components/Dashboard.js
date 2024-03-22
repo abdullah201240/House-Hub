@@ -11,6 +11,16 @@ export default function Dashboard() {
     navigate('/houseJoin', { state: { data: location.state.data } });
   };
 
+  const houseInfo = async () => {
+    navigate('/houseInfo', { state: { data: location.state.data } });
+  };
+  
+  const dashboard = async () => {
+    navigate('/dashboard', { state: { data: location.state.data } });
+  };
+
+
+
   useEffect(() => {
     if (!location.state || !location.state.data) {
       navigate('/signin');
@@ -36,13 +46,16 @@ export default function Dashboard() {
   <div className="collapse navbar-collapse" id="navbarSupportedContent" style={{paddingLeft:300}}>
     <ul className="navbar-nav mr-auto">
       <li className="nav-item active">
-        <a className="nav-link" href="/"><h3>Home</h3> <span className="sr-only">(current)</span></a>
+      <a className="nav-link" href="/dashboard" onClick={dashboard}>
+          
+          <h3>Home</h3> <span className="sr-only">(current)</span></a>
       </li>
       <li className="nav-item">
-        <a className="nav-link" href="/houseJoin" onClick={houseJoin}><h3>HouseJoin</h3></a>
+        <a className="nav-link" href="/houseJoin" onClick={houseJoin}>
+          <h3>HouseJoin</h3></a>
       </li>
       <li className="nav-item">
-        <a className="nav-link" href="/">Link</a>
+      <a className="nav-link" href="/houseInfo" onClick={houseInfo}><h3>HouseInfo</h3><span className="sr-only">(current)</span></a>
       </li>
       <li className="nav-item">
         <a className="nav-link" href="/">Link</a>

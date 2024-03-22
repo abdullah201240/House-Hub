@@ -11,16 +11,16 @@
 }
 
 .form {
-  width: 600px;
+  width: 500px;
   height: 500px;
-  background: linear-gradient(to top, rgb(69, 23, 45) 50%, rgb(69, 22, 44) 50%);
+  background:rgb(220, 220, 221);
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   margin: auto;
-  border-radius: 20px;
+  border-radius: 10px;
   padding: 25px;
   padding-left: 55px;
 
@@ -36,4 +36,18 @@
   text-align: center;
 }
 
+.custom-input::placeholder {
+  color: rgb(130, 128, 128); 
+}
+.custom-input{
+  color: blue;
+}
+.input-row {
+  display: flex;
+}
+
+.input-row input {
+  flex: 1;
+  margin-right: 10px; /* Optional: Adjust margin between inputs */
+}
 
