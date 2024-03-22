@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import axios from 'axios';
 import "./CSS/Signin.css";
+import { API_BASE_URL } from './config'; 
+
 
 const CustomAlert = ({ message, onClose }) => (
   <div className="custom-alert">
@@ -19,7 +21,7 @@ const HouseOwnerSignin = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post('http://localhost:8080/HouseOwnerLogin', {
+      const response = await axios.post(`${API_BASE_URL}/HouseOwnerLogin`, {
         email,
         password,
       });

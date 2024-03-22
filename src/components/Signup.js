@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { NavLink, useNavigate } from 'react-router-dom';
 import './CSS/Signup.css';
+import { API_BASE_URL } from './config'; 
 
 export default function Signup() {
   const [name, setName] = useState('');
@@ -15,7 +16,7 @@ export default function Signup() {
     e.preventDefault();
 
     try {
-      const response = await axios.post('http://192.168.0.107:8080/signup', {
+      const response = await axios.post(`${API_BASE_URL}/signup`, {
         name,
         phone,
         email,
@@ -24,7 +25,6 @@ export default function Signup() {
 
       console.log(response.data);
 
-      // Redirect to login page after successful signup
       navigate('/signin');
     } catch (error) {
       console.error('Error signing up:', error);

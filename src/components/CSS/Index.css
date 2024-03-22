@@ -3,13 +3,14 @@
     padding: 0;
 }
 
-.main{
+.main {
     width: 100%;
-    background: linear-gradient(to top, rgba(0,0,0,0.5)50%,rgba(0,0,0,0.5)50%), url(../Image/2.avif);
+    background: linear-gradient(to top, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.5) 50%), url(../Image/2.avif);
     background-position: center;
     background-size: cover;
     height: 100vh;
 }
+
 
 .navbar{
     width: 1200px;

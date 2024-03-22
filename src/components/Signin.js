@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink} from 'react-router-dom';
 import axios from 'axios';
 import "./CSS/Signin.css";
+import { API_BASE_URL } from './config'; 
 
 const CustomAlert = ({ message, onClose }) => (
   <div className="custom-alert">
@@ -15,19 +16,23 @@ const Signin = () => {
   const [password, setPassword] = useState('');
   const [showAlert, setShowAlert] = useState(false);
   const [alertMessage, setAlertMessage] = useState('');
+
   const handleLoginFormSubmit = async (e) => {
     e.preventDefault();
 
     try {
-      const response = await axios.post('http://192.168.0.107:8080/login', {
+      const response = await axios.post(`${API_BASE_URL}/login`,{
+
         email,
         password,
       });
 
       console.log('Login successful:', response.data);
+      window.open('/dashboard', response.data);
 
-      window.open('/dashboard', '_blank');
 
+
+     
     } catch (error) {
       console.error('Error logging in:', error.response.data);
       setAlertMessage('Login failed. Please check your credentials.');

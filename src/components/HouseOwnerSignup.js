@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { NavLink, useNavigate } from 'react-router-dom';
 import './CSS/Signup.css';
+import { API_BASE_URL } from './config'; // Adjust the path as needed
+
 
 export default function HouseOwnerSignup() {
   const [name, setName] = useState('');
@@ -24,7 +26,7 @@ export default function HouseOwnerSignup() {
       formData.append('password', password);
       formData.append('address', address);
       formData.append('addressproof', addressProof);
-      const response = await axios.post('http://192.168.0.107:8080/HouseOwnerSignup', formData);
+      const response = await axios.post(`${API_BASE_URL}/HouseOwnerSignup`, formData);
 
       console.log(response.data);
 
