@@ -164,9 +164,9 @@ const imageUrl = `${API_BASE_URL}/${photo}`;
       <h4 className="text-muted mb-0">{owner.phone}</h4>
     </td>
     <td>
-      <span className={`badge badge-${owner.status === 'Active' ? 'success' : 'danger'} rounded-pill d-inline`}>
-        {owner.status}
-      </span>
+    <span className={`badge badge-${owner.status === 'Accepted' ? 'success' : 'danger'} rounded-pill d-inline`}>
+  {owner.status}
+</span>
     </td>
    
     
